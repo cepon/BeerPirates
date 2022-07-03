@@ -1,0 +1,53 @@
+version: '3.4'
+
+services:
+  sqlserver:
+    container_name: sqlserver
+    environment:
+      SA_PASSWORD: "DatabasePass3!"
+      ACCEPT_EULA: "Y"
+    restart: always
+    ports:
+      - "1433:1433"
+
+  product:
+    container_name: product
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - "ConnectionStrings:DefaultConnection=Server=sqlserver;Database=Product;User Id=sa;Password=DatabasePass3!"
+    depends_on:
+      - sqlserver
+    ports:
+      - "5001:80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  beerrecommendations:
+    container_name: beerrecommendations
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - "ConnectionStrings:DefaultConnection=Server=sqlserver;Database=BeerRecommendation;User Id=sa;Password=DatabasePass3!"
+      - "ServiceUrls:ProductService=http://product"
+    depends_on:
+      - sqlserver
+      - product
+    ports:
+      - "5002:80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  ocelotapigateway:
+    container_name: ocelotapigateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    depends_on:
+      - sqlserver
+      - product
+      - beerrecommendations
+    ports:
+      - "5000:80"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIGateways", "APIGateways", "{12C99D7B-9EBF-4380-858E-39D918710ABE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{CED6A279-D5D6-40A0-B7AE-423E2234F525}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotAPIGateway", "APIGateways\OcelotAPIGateway\OcelotAPIGateway.csproj", "{91340520-2AA8-4DD2-99C2-F689A32FCB81}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product", "Services\Product\Product.csproj", "{186B7A58-FD76-4EDD-BE21-97F58B23217E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerRecommendations", "Services\BeerRecommendations\BeerRecommendations.csproj", "{3725B027-DACC-4F44-8811-7BA2B15F3B8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Postman", "Postman", "{F88EF89C-7464-4DF3-A3F3-E528C255C9F1}"
+	ProjectSection(SolutionItems) = preProject
+		Postman\BeerPirates.postman_collection.json = Postman\BeerPirates.postman_collection.json
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8A7F098F-065C-426E-AE43-CC00EC93685F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91340520-2AA8-4DD2-99C2-F689A32FCB81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91340520-2AA8-4DD2-99C2-F689A32FCB81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91340520-2AA8-4DD2-99C2-F689A32FCB81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91340520-2AA8-4DD2-99C2-F689A32FCB81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{186B7A58-FD76-4EDD-BE21-97F58B23217E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186B7A58-FD76-4EDD-BE21-97F58B23217E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186B7A58-FD76-4EDD-BE21-97F58B23217E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{186B7A58-FD76-4EDD-BE21-97F58B23217E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3725B027-DACC-4F44-8811-7BA2B15F3B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3725B027-DACC-4F44-8811-7BA2B15F3B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3725B027-DACC-4F44-8811-7BA2B15F3B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3725B027-DACC-4F44-8811-7BA2B15F3B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7F098F-065C-426E-AE43-CC00EC93685F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A7F098F-065C-426E-AE43-CC00EC93685F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A7F098F-065C-426E-AE43-CC00EC93685F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A7F098F-065C-426E-AE43-CC00EC93685F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91340520-2AA8-4DD2-99C2-F689A32FCB81} = {12C99D7B-9EBF-4380-858E-39D918710ABE}
+		{186B7A58-FD76-4EDD-BE21-97F58B23217E} = {CED6A279-D5D6-40A0-B7AE-423E2234F525}
+		{3725B027-DACC-4F44-8811-7BA2B15F3B8A} = {CED6A279-D5D6-40A0-B7AE-423E2234F525}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FD6336B-17F0-4AD1-9BC3-CF7E6339D85A}
+	EndGlobalSection
+EndGlobal

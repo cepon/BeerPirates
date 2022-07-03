@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+
+  product:
+    image: ${DOCKER_REGISTRY-}product
+    build:
+      context: .
+      dockerfile: Services/Product/Dockerfile
+
+  beerrecommendations:
+    image: ${DOCKER_REGISTRY-}beerrecommendations
+    build:
+      context: .
+      dockerfile: Services/BeerRecommendations/Dockerfile
+
+  ocelotapigateway:
+    image: ${DOCKER_REGISTRY-}ocelotapigateway
+    build:
+      context: .
+      dockerfile: APIGateways/OcelotAPIGateway/Dockerfile
+
